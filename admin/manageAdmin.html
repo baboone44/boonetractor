@@ -1,0 +1,53 @@
+<!-- this form submits to addAdmin.php and includes a php echo
+     to populate the table with admins from the db -->
+
+<div class="panel panel-primary" style="margin: 5px;">
+  <div class="panel-heading">
+    <div class="panel-title">
+      Manage Admins
+    </div>
+  </div>
+  <div class="container-body" style="margin: 8px;">
+    <form method="POST" action="addAdmin.php">
+      <div class="form-group">
+	<input type="text" class="form-control" name="newUsername" 
+	       placeholder="New Username"/>
+      </div>
+      <div class="form-group">
+	<input type="password" class="form-control" name="newPassword"
+	       placeholder="New Password"/>
+      </div>
+      <div class="form-group">
+	<button type="submit" class="btn btn-success" 
+		id="newUserButton">Create New Admin</button>
+      </div>
+    </form>
+
+    <hr/>
+  </div>
+
+  <table class="table display" id="adminsTable">
+    
+    <thead>
+      <tr>
+	<th>Admin</th>
+	<th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php
+	 while( $stmt->fetch()) {
+      echo "<tr id='row$username'>";
+	echo "<td>$username</td>";
+        echo "<td><button onClick='remove_admin(\"$username\")'>Remove Privileges</button></td>";
+        echo "</tr>";
+      }
+      ?>
+    </tbody>
+    
+  </table>
+
+
+</div>
+
+

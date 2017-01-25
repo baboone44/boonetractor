@@ -1,0 +1,58 @@
+<!-- Author:Bronson Boone -->
+<!-- This page displays the login,
+     the form submits to confirmCredentials.php
+     the page redirects to contentManager.php via the confirm page-->
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet"
+	  href="http://cs.roanoke.edu/~baboone/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet"
+    	  href="http://cs.roanoke.edu/~baboone/bootstrap/css/bootstrap-theme.min.css"/>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"
+            integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+            crossorigin="anonymous">
+    </script>
+    <script src="http://cs.roanoke.edu/~baboone/bootstrap/js/bootstrap.min.js">
+    </script>
+  </head>
+
+
+  <body>
+    <div class="container">
+      <div class="panel panel-primary">
+	<div class="panel-heading">
+	  <div class="panel-title">
+	    Content Manager
+	  </div>
+	</div>
+	<div class="panel-body">
+	  <form class="form-inline"
+		method="POST" action="confirmCredentials.php"
+		style="margin-top: 15px;">
+
+	    <div class="form-group">
+	      <input type="text" class="form-control" id="id"
+		     name="usernameInput"
+		     placeholder="Username">
+	    </div>
+	    <div class="form-group">
+	      <input type="password" class="form-control" id="pw"
+		     name="passwordInput"
+		     placeholder="Password">
+	    </div>
+	    <div class="form-group">
+		<button type="submit" class="btn btn-primary" id="login">
+		Login</button>
+	    </div>
+	  </form>
+	</div>
+      </div>
+    </div>
+</div>
+</body>
+<html>

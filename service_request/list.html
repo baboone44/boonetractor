@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>Service Request</title>
+    <link rel="stylesheet" type="text/css"
+	  href="../../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+	  href="../../bootstrap/css/bootstrap-theme.min.css">
+    <script type="text/javascript"
+	    src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript"
+	    src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+	    src="../../form-validation/dis/jquery.validate.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="panel panel-primary">
+	<div class="panel-heading">
+	  <div class="panel-title">
+	    Service Request
+	  </div>
+	</div>
+	<div class="panel-body">
+	  <table class="table">
+	    <tr>
+	      <th>Name</th>
+	      <th>Category</th>
+	      <th>Store</th>
+	      <th>Status</th>
+	      <th>Date</th>
+	    </tr>
+	    <?php
+	       echo "<tr>";
+	       echo "<td><a href='view_request.php?id=$id'>$name</a></td>";
+	       echo "<td>$category</td>";
+	       echo "<td>$store_id</td>";
+	       echo "<td>$status</td>";
+	       echo "<td>$date</td>";
+	       echo "</tr>";
+	    ?>
+	  </table>
+	</div><!-- panel body -->
+      </div>
+    </div>
+  </body>
+</html>

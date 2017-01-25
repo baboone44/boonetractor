@@ -1,0 +1,56 @@
+<!-- Author:Bronson Boone -->
+<!-- This page has a title and body input box that submits to the Blog Database
+     and is displayed to recentDeals.html
+     admins can also remove selected deals from the recentDeals page-->
+
+<div class="panel panel-primary" style="margin: 5px;">
+  <div class="panel-heading">
+    <div class="panel-title">
+      Manage Posts
+    </div>
+  </div>
+
+  <div class="container-body" style="margin: 8px;">
+    <form method="POST" action="insertPost.php">
+      <div class="form-group">
+	<input type="text" class="form-control" name="postTitle" 
+	       placeholder="Post Title">
+      </div>
+      <div class="form-group">
+	<textarea class="form-control" rows="5" name="postBody" 
+		  placeholder="Post Body"></textarea>
+      </div>
+      <div class="form-group" style="margin-left: 15px;">
+	<button type="submit" class="btn btn-success" 
+		id="postButton">Create Post</button>
+	<a href="../deals.php">
+	  <div class="btn btn-primary">To Deals Page</div>
+	</a>
+      </div>
+    </form>
+
+    <hr/>
+  </div>
+  
+  <table class="table display" id="dealsTable">
+    
+    <thead>
+      <tr>
+	<th>Deal</th>
+	<th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php
+	 while( $stmt->fetch()) {
+      echo "<tr id='row$dealID'>";
+	echo "<td>$dealTitle</td>";
+        echo "<td><button onClick='remove_deal($dealID)'>Hide</button></td>";
+        echo "</tr>";
+      }
+      ?>
+    </tbody>
+    
+  </table>
+</div>
+
